@@ -8,5 +8,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Utils {
     public static WebDriver driver = new ChromeDriver();
-    //public static  WebDriverWait wait = new WebDriverWait(driver, 10,TimeUnit.SECONDS);
+   // public static  WebDriverWait wait = new WebDriverWait(driver, TimeUnit.SECONDS(10));
+
 }
