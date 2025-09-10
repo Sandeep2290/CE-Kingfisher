@@ -1,10 +1,15 @@
 package Pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import static Utils.Utils.driver;
+
 public class Homepage {
 
-    public String prouctName(String prodname)
+    public WebElement productName(String prodname)
     {
-        String prod="";
+        WebElement prod=driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]",prodname)));
         return prod;
 
     }
