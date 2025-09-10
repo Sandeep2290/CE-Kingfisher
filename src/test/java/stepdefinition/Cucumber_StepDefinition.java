@@ -1,18 +1,24 @@
 package stepdefinition;
 
+import Utils.Utils;
 import config.CoreConfig;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import Utils.Utils;
+
+import static Utils.Utils.driver;
 
 public class Cucumber_StepDefinition {
+
     @Given("I am on the products page")
     public void i_am_on_the_products_page() {
 
-        WebDriver driver = new ChromeDriver();
         driver.get(CoreConfig.baseURL);
+
     }
 
     @When("I add {string}, {string}, {string}, {string}, {string} to cart")
