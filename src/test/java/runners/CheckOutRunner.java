@@ -6,14 +6,12 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 
-@RunWith(Cucumber.class)
-
 @CucumberOptions(features = "src/test/resources/Features/",
-        glue = "src/test/java/stepdefinition",
+        glue = "stepdefinition",
         plugin = {"pretty", "html:target/cuumber-html-report",
                 "json:target/cucumber.json", "junit:target/cucumber.xml"},
         tags = "@test"
 )
-
+@RunWith(Cucumber.class)
 public class CheckOutRunner {
 }
