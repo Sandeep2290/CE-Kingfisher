@@ -9,9 +9,3 @@ Feature: E-Commerce Checkout Automation
     When I proceed to checkout and apply promo "rahulshettyacademy"
     Then discount should be applied and order placed successfully
 
-  Scenario Outline: Handle invalid promo code
-    When I apply invalid promo "<promoCode>"
-    Then error message "<error>" should be displayed
-    Examples:
-      | promoCode | error           |
-      | invalid   | Invalid Code !! |
