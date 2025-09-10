@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import Utils.Utils;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 //import static Utils.Utils.wait;
@@ -90,6 +91,13 @@ driver.findElement(By.xpath("//button[@class='promoBtn']")).click();
     public void discount_should_be_applied_and_order_placed_successfully() {
         String disc=driver.findElement(By.xpath("//span[@class='discountPerc']")).getText();
         Assert.assertEquals(disc, "10%", "Discount should be 10%");
-
+driver.findElement(By.xpath("//button[text()='Place Order']")).click();
+        Select select = new Select(driver.findElement(By.xpath("//select[@style='width: 200px;']")));
+        select.selectByVisibleText("India");
+        driver.findElement(By.xpath("//input[@class='chkAgree']")).click();
+        driver.findElement(By.xpath("//button[text()='Proceed']")).click();
+        //driver.findElement(By.xpath("//div[text()='Thank you. Your order has been placed successfully ...!!! ']"))
+    String expmessage=driver.findElement(By.xpath("//div[@class='wrapperThree']")).getText();
+        Assert.assertEquals(expmessage, "Thank you. Your order has been placed successfully ...!!! ", "order successful message");
     }
 }
