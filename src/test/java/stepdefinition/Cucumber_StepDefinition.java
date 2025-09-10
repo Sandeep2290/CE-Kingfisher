@@ -16,11 +16,9 @@ import Utils.Utils;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
-//import static Utils.Utils.wait;
 import static Utils.Utils.driver;
-import static Utils.Utils.wait;
+//import static Utils.Utils.wait;
 
 public class Cucumber_StepDefinition {
 
@@ -63,18 +61,16 @@ public class Cucumber_StepDefinition {
 
     @Then("total price should match calculated sum")
     public void total_price_should_match_calculated_sum() {
-int Totalprice=Integer.parseInt(driver.findElement(By.xpath("//div[@class='cart-info']//td[contains(text(),'Price')]//ancestor::tr//strong")).getText());
+String Totalprice=driver.findElement(By.xpath("//div[@class='cart-info']//td[contains(text(),'Price')]//ancestor::tr//strong")).getText();
 driver.findElement(By.xpath("//a[@class='cart-icon']")).click();
 
-int item1=Integer.parseInt(driver.findElement(By.xpath("(//p[@class='amount'])[1]")).getText());
-int item2=Integer.parseInt(driver.findElement(By.xpath("(//p[@class='amount'])[2]")).getText());
-int item3=Integer.parseInt(driver.findElement(By.xpath("(//p[@class='amount'])[3]")).getText());
-int item4=Integer.parseInt(driver.findElement(By.xpath("(//p[@class='amount'])[4]")).getText());
-int item5=Integer.parseInt(driver.findElement(By.xpath("(//p[@class='amount'])[5]")).getText());
-int actualPrice = item1+item2+item3+item4+item5;
-if (Totalprice==actualPrice)
-{Assert.assertTrue();}
-else Assert.assertFalse();
+String item1=driver.findElement(By.xpath("(//p[@class='amount'])[1]")).getText();
+String item2=driver.findElement(By.xpath("(//p[@class='amount'])[2]")).getText();
+String item3=driver.findElement(By.xpath("(//p[@class='amount'])[3]")).getText();
+String item4=driver.findElement(By.xpath("(//p[@class='amount'])[4]")).getText();
+String item5=driver.findElement(By.xpath("(//p[@class='amount'])[5]")).getText();
+String actualPrice=item1+item2+item3+item4+item5;
+        Assert.assertEquals(Totalprice, actualPrice, "Value matched");
 
     }
 
