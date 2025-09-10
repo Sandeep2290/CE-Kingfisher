@@ -29,7 +29,8 @@ public class Cucumber_StepDefinition {
         driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]//ancestor::div[@class='product']//button[contains(text(),'ADD TO CART')]",item1))).click();
 driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]//ancestor::div[@class='product']//button[contains(text(),'ADD TO CART')]",item2))).click();
     driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]//ancestor::div[@class='product']//button[contains(text(),'ADD TO CART')]",item3))).click();
-    driver.findElement(By)
+    driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]//ancestor::div[@class='product']//button[contains(text(),'ADD TO CART')]", item4))).click();
+    driver.findElement(By.xpath(String.format("//h4[contains(text(),'%s')]//ancestor::div[@class='product']//button[contains(text(),'ADD TO CART')]", item5))).click();
 
 
     }
